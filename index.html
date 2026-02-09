@@ -4,138 +4,134 @@
   <meta charset="UTF-8">
   <title>ПОТОЛОК.СЕГОДНЯ — натяжные потолки сегодня</title>
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
   <style>
-    .header {
-  border-bottom: 1px solid #EDEDED;
-  background: #fff;
-}
-
-.header-inner {
-  max-width: 1100px;
-  margin: 0 auto;
-  padding: 16px 20px;
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-}    .header {
-  border-bottom: 1px solid #EDEDED;
-  background: #fff;
-}
-
-.header-inner {
-  max-width: 1100px;
-  margin: 0 auto;
-  padding: 16px 20px;
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-}
-
-.logo {
-  display: flex;
-  align-items: center;
-  gap: 10px;
-  font-weight: 600;
-}
-
-.logo .line {
-  width: 32px;
-  height: 2px;
-  background: #111;
-  display: inline-block;
-}
-
-.logo .dot {
-  width: 6px;
-  height: 6px;
-  background: #2F80FF;
-  border-radius: 50%;
-  display: inline-block;
-}
-
-.logo-text {
-  margin-left: 8px;
-  font-size: 14px;
-}
-
-.header-cta {
-  background: #2F80FF;
-  color: #fff;
-  padding: 10px 18px;
-  text-decoration: none;
-  font-size: 14px;
-}    body {
-  <div style="background:red; color:white; padding:20px; font-size:20px;">
-  ТЕСТ: ЕСЛИ ВИДИШЬ ЭТО — ФАЙЛ ОБНОВЛЯЕТСЯ
-</div>
-  <header class="header">
-  <div class="header-inner">
-    <div class="logo">
-      <span class="line"></span><span class="dot"></span>
-      <span class="logo-text">ПОТОЛОК.СЕГОДНЯ</span>
-    </div>
-
-    <a href="#contact" class="header-cta">Сделать сегодня</a>
-  </div>
-</header> 
-  margin: 0;
+    body {
+      margin: 0;
       font-family: Inter, Arial, sans-serif;
       color: #111;
       background: #fff;
     }
+
+    /* HEADER */
+    .header {
+      border-bottom: 1px solid #EDEDED;
+      background: #fff;
+      position: sticky;
+      top: 0;
+      z-index: 1000;
+    }
+
+    .header-inner {
+      max-width: 1100px;
+      margin: 0 auto;
+      padding: 16px 20px;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
+
+    .logo {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      font-weight: 600;
+      font-size: 14px;
+    }
+
+    .logo .line {
+      width: 32px;
+      height: 2px;
+      background: #111;
+      display: inline-block;
+    }
+
+    .logo .dot {
+      width: 6px;
+      height: 6px;
+      background: #2F80FF;
+      border-radius: 50%;
+      display: inline-block;
+    }
+
+    .header-cta {
+      background: #2F80FF;
+      color: #fff;
+      padding: 10px 18px;
+      text-decoration: none;
+      font-size: 14px;
+    }
+
+    /* SECTIONS */
     section {
       padding: 60px 20px;
       max-width: 1100px;
       margin: 0 auto;
     }
+
     h1, h2 {
       margin-bottom: 16px;
     }
+
     .subtitle {
       color: #555;
       margin-bottom: 32px;
     }
+
     .cta {
       background: #2F80FF;
       color: #fff;
-      border: none;
       padding: 16px 28px;
       font-size: 16px;
-      cursor: pointer;
+      text-decoration: none;
+      display: inline-block;
+      margin-top: 20px;
     }
+
+    /* CARDS */
     .cards {
       display: grid;
       grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
       gap: 20px;
     }
+
     .card {
       border: 1px solid #EDEDED;
       padding: 20px;
     }
+
     .price {
       font-size: 22px;
       font-weight: bold;
       margin: 16px 0;
     }
+
+    /* STEPS */
     .steps {
       display: grid;
       grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
       gap: 20px;
     }
+
     .step-number {
       color: #2F80FF;
       font-weight: bold;
     }
+
+    /* TABLE */
     table {
       width: 100%;
       border-collapse: collapse;
       margin-top: 20px;
     }
+
     td, th {
       border-bottom: 1px solid #EDEDED;
       padding: 12px;
       text-align: left;
     }
+
+    /* CONTACT */
     .contact a {
       display: block;
       font-size: 22px;
@@ -143,6 +139,7 @@
       color: #2F80FF;
       text-decoration: none;
     }
+
     @media (max-width: 600px) {
       section {
         padding: 40px 16px;
@@ -150,21 +147,38 @@
     }
   </style>
 </head>
+
 <body>
 
+<!-- HEADER -->
+<header class="header">
+  <div class="header-inner">
+    <div class="logo">
+      <span class="line"></span>
+      <span class="dot"></span>
+      <span>ПОТОЛОК.СЕГОДНЯ</span>
+    </div>
+    <a href="#contact" class="header-cta">Сделать сегодня</a>
+  </div>
+</header>
+
+<!-- HERO -->
 <section>
   <h1>Натяжные потолки сегодня</h1>
-  <ul style="margin:20px 0; padding-left:18px; color:#555;">
-  <li>Без замера</li>
-  <li>Типовые квартиры</li>
-  <li>Фиксированная цена</li>
-</ul>
   <p class="subtitle">98% заказов — установка в день обращения</p>
+
+  <ul style="color:#555;">
+    <li>Без замера</li>
+    <li>Типовые квартиры</li>
+    <li>Фиксированная цена</li>
+  </ul>
+
   <a class="cta" href="https://wa.me/79179773837" target="_blank">
-  Сделать сегодня
-</a>
+    Сделать сегодня
+  </a>
 </section>
 
+<!-- SOLUTIONS -->
 <section>
   <h2>Выберите свою квартиру</h2>
   <p class="subtitle">Типовые решения. Фиксированная цена.</p>
@@ -172,63 +186,43 @@
   <div class="cards">
     <div class="card">
       <h3>Кухня 6 м²</h3>
-      <p>Белый матовый потолок</p>
       <div class="price">6 900 ₽</div>
-      <a class="cta" href="https://wa.me/79179773837" target="_blank">
-  Сделать сегодня
-</a>
+      <a class="cta" href="https://wa.me/79179773837" target="_blank">Сделать сегодня</a>
     </div>
 
     <div class="card">
       <h3>Комната 18 м²</h3>
-      <p>Белый матовый потолок</p>
       <div class="price">9 900 ₽</div>
-      <a class="cta" href="https://wa.me/79179773837" target="_blank">
-  Сделать сегодня
-</a>
+      <a class="cta" href="https://wa.me/79179773837" target="_blank">Сделать сегодня</a>
     </div>
 
     <div class="card">
       <h3>Коридор</h3>
       <div class="price">4 900 ₽</div>
-      <a class="cta" href="https://wa.me/79179773837" target="_blank">
-  Сделать сегодня
-</a>
+      <a class="cta" href="https://wa.me/79179773837" target="_blank">Сделать сегодня</a>
     </div>
 
     <div class="card">
       <h3>Санузел</h3>
       <div class="price">4 500 ₽</div>
-      <a class="cta" href="https://wa.me/79179773837" target="_blank">
-  Сделать сегодня
-</a>
+      <a class="cta" href="https://wa.me/79179773837" target="_blank">Сделать сегодня</a>
     </div>
   </div>
 </section>
 
+<!-- PROCESS -->
 <section>
   <h2>Как мы делаем за 1 день</h2>
 
   <div class="steps">
-    <div>
-      <div class="step-number">01</div>
-      <p>Вы выбираете решение</p>
-    </div>
-    <div>
-      <div class="step-number">02</div>
-      <p>Полотно уже готово</p>
-    </div>
-    <div>
-      <div class="step-number">03</div>
-      <p>Монтаж сегодня</p>
-    </div>
-    <div>
-      <div class="step-number">04</div>
-      <p>Готово</p>
-    </div>
+    <div><div class="step-number">01</div>Вы выбираете решение</div>
+    <div><div class="step-number">02</div>Полотно уже готово</div>
+    <div><div class="step-number">03</div>Монтаж сегодня</div>
+    <div><div class="step-number">04</div>Готово</div>
   </div>
 </section>
 
+<!-- PRICING -->
 <section>
   <h2>Фиксированная цена</h2>
 
@@ -241,6 +235,7 @@
   </table>
 </section>
 
+<!-- CONTACT -->
 <section class="contact" id="contact">
   <h2>Сделаем потолок сегодня</h2>
   <a href="tel:+79179773837">+7 (917) 977-38-37</a>
