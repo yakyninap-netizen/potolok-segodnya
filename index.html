@@ -146,6 +146,39 @@
         padding: 40px 16px;
       }
     }
+    /* CARD REDESIGN */
+.card {
+  position: relative;
+  border: 1px solid #EDEDED;
+  padding: 24px 20px 24px 28px;
+  background: #fff;
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+.card::before {
+  content: "";
+  position: absolute;
+  left: 0;
+  top: 0;
+  width: 4px;
+  height: 100%;
+  background: #2F80FF;
+}
+
+.card:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 12px 40px rgba(0, 0, 0, 0.12);
+  border-color: transparent;
+}
+.card h3 {
+  margin-top: 0;
+}
+
+.price {
+  font-size: 26px;
+  font-weight: 700;
+  margin: 20px 0;
+}
   </style>
 </head>
 
@@ -245,36 +278,4 @@
 
 </body>
 </html>
-/* CARD REDESIGN */
-.card {
-  position: relative;
-  border: 1px solid #EDEDED;
-  padding: 24px 20px 24px 28px;
-  background: #fff;
-  transition: transform 0.2s ease, box-shadow 0.2s ease;
-}
 
-.card::before {
-  content: "";
-  position: absolute;
-  left: 0;
-  top: 0;
-  width: 4px;
-  height: 100%;
-  background: #2F80FF;
-}
-
-.card:hover {
-  transform: translateY(-4px);
-  box-shadow: 0 12px 40px rgba(0, 0, 0, 0.12);
-  border-color: transparent;
-}
-.card h3 {
-  margin-top: 0;
-}
-
-.price {
-  font-size: 26px;
-  font-weight: 700;
-  margin: 20px 0;
-}
