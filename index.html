@@ -4,7 +4,6 @@
   <meta charset="UTF-8">
   <title>ПОТОЛОК.СЕГОДНЯ — натяжные потолки сегодня</title>
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-
   <style>
     body {
       margin: 0;
@@ -12,127 +11,59 @@
       color: #111;
       background: #fff;
     }
-
-    /* HEADER */
-    .header {
-      border-bottom: 1px solid #EDEDED;
-      background: #fff;
-      position: sticky;
-      top: 0;
-      z-index: 1000;
-    }
-
-    .header-inner {
-      max-width: 1100px;
-      margin: 0 auto;
-      padding: 16px 20px;
-      display: flex;
-      justify-content: space-between;
-      align-items: center;
-    }
-
-    .logo {
-      display: flex;
-      align-items: center;
-      gap: 10px;
-      font-weight: 600;
-      font-size: 14px;
-    }
-
-    .logo .line {
-      width: 32px;
-      height: 2px;
-      background: #111;
-      display: inline-block;
-    }
-
-    .logo .dot {
-      width: 6px;
-      height: 6px;
-      background: #2F80FF;
-      border-radius: 50%;
-      display: inline-block;
-    }
-
-    .header-cta {
-      background: #2F80FF;
-      color: #fff;
-      padding: 10px 18px;
-      text-decoration: none;
-      font-size: 14px;
-    }
-
-    /* SECTIONS */
     section {
       padding: 60px 20px;
       max-width: 1100px;
       margin: 0 auto;
     }
-
     h1, h2 {
       margin-bottom: 16px;
     }
-
     .subtitle {
       color: #555;
       margin-bottom: 32px;
     }
-
     .cta {
       background: #2F80FF;
       color: #fff;
+      border: none;
       padding: 16px 28px;
       font-size: 16px;
-      text-decoration: none;
-      display: inline-block;
-      margin-top: 20px;
+      cursor: pointer;
     }
-
-    /* CARDS */
     .cards {
       display: grid;
       grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
       gap: 20px;
-      padding-bottom: 20px;
     }
-
     .card {
       border: 1px solid #EDEDED;
       padding: 20px;
     }
-
     .price {
       font-size: 22px;
       font-weight: bold;
       margin: 16px 0;
     }
-
-    /* STEPS */
     .steps {
       display: grid;
       grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
       gap: 20px;
     }
-
     .step-number {
       color: #2F80FF;
       font-weight: bold;
     }
-
-    /* TABLE */
     table {
       width: 100%;
       border-collapse: collapse;
       margin-top: 20px;
     }
-
     td, th {
       border-bottom: 1px solid #EDEDED;
       padding: 12px;
       text-align: left;
     }
-
-    /* CONTACT */
     .contact a {
       display: block;
       font-size: 22px;
@@ -140,146 +71,77 @@
       color: #2F80FF;
       text-decoration: none;
     }
-
     @media (max-width: 600px) {
       section {
         padding: 40px 16px;
       }
     }
-    /* CARD REDESIGN */
-.card {
-  position: relative;
-  border: 1px solid #EDEDED;
-  padding: 24px 20px 24px 28px;
-  background: #fff;
-  transition: transform 0.2s ease, box-shadow 0.2s ease;
-}
-
-.card::before {
-  content: "";
-  position: absolute;
-  left: 0;
-  top: 0;
-  width: 4px;
-  height: 100%;
-  background: #2F80FF;
-}
-
-.card:hover {
-  transform: translateY(-4px);
-  box-shadow: 0 12px 40px rgba(0, 0, 0, 0.12);
-  border-color: transparent;
-}
-.card h3 {
-  margin-top: 0;
-}
-
-.price {
-  font-size: 26px;
-  font-weight: 700;
-  margin: 20px 0;
-}
-    .card-image {
-  width: 100%;
-  height: 180px;
-  object-fit: cover;
-  border-radius: 4px;
-  margin-bottom: 16px;
-}
   </style>
 </head>
-
 <body>
 
-<!-- HEADER -->
-<header class="header">
-  <div class="header-inner">
-    <div class="logo">
-      <span class="line"></span>
-      <span class="dot"></span>
-      <span>ПОТОЛОК.СЕГОДНЯ</span>
-    </div>
-    <a href="#contact" class="header-cta">Сделать сегодня</a>
-  </div>
-</header>
-
-<!-- HERO -->
 <section>
   <h1>Натяжные потолки сегодня</h1>
-
-<p class="subtitle">
-Типовые квартиры · Фиксированная цена · Без замера
-</p>
-
-<div style="font-size:36px; font-weight:700; margin:24px 0; color:#2F80FF;">
-98%
-</div>
-<p style="margin-top:-10px; color:#555;">
-заказов — установка в день обращения
-</p>
-  <ul style="margin-top:20px; color:#555;">
-  <li>Цена известна сразу</li>
-  <li>Без выезда замерщика</li>
-  <li>Монтаж 2–3 часа</li>
-</ul>
-  <a class="cta" href="https://wa.me/79179773837" target="_blank">
-    Сделать сегодня
-  </a>
+  <p class="subtitle">98% заказов — установка в день обращения</p>
+  <button class="cta">Сделать сегодня</button>
 </section>
 
-<!-- SOLUTIONS -->
 <section>
-  <h2>Готовые решения под типовые квартиры</h2>
-<p class="subtitle">
-Самые частые планировки. Установка сегодня.
-</p>
-  <div class="card">
-  <img src="kitchen.jpg" alt="Натяжной потолок кухня 6 м²" class="card-image">
-  <h3>Кухня 6 м²</h3>
-  <div class="price">6 900 ₽</div>
-  <a class="cta" href="https://wa.me/79179773837" target="_blank">Сделать сегодня</a>
-</div>
+  <h2>Выберите свою квартиру</h2>
+  <p class="subtitle">Типовые решения. Фиксированная цена.</p>
+
+  <div class="cards">
     <div class="card">
-  <img src="room.jpg" alt="Натяжной потолок комната 18 м²" class="card-image">
-  <h3>Комната 18 м²</h3>
-  <div class="price">9 900 ₽</div>
-  <a class="cta" href="https://wa.me/79179773837" target="_blank">Сделать сегодня</a>
-</div>
+      <h3>Кухня 6 м²</h3>
+      <p>Белый матовый потолок</p>
+      <div class="price">6 900 ₽</div>
+      <button class="cta">Сделать сегодня</button>
+    </div>
+
     <div class="card">
-  <img src="hallway.jpg" alt="Натяжной потолок коридор" class="card-image">
-  <h3>Коридор</h3>
-  <div class="price">4 900 ₽</div>
-  <a class="cta" href="https://wa.me/79179773837" target="_blank">Сделать сегодня</a>
-</div>
-  <div class="card">
-  <img src="bathroom.jpg" alt="Натяжной потолок санузел" class="card-image">
-  <h3>Санузел</h3>
-  <div class="price">4 500 ₽</div>
-  <a class="cta" href="https://wa.me/79179773837" target="_blank">Сделать сегодня</a>
-</div>
-  <div style="margin-top:40px;">
-  <h3>Почему можем сделать сегодня</h3>
-  <ul style="color:#555;">
-    <li>Типовые размеры квартир</li>
-    <li>Полотна уже заготовлены</li>
-    <li>Монтаж занимает 2–3 часа</li>
-  </ul>
-</div>
+      <h3>Комната 18 м²</h3>
+      <p>Белый матовый потолок</p>
+      <div class="price">9 900 ₽</div>
+      <button class="cta">Сделать сегодня</button>
+    </div>
+
+    <div class="card">
+      <h3>Коридор</h3>
+      <div class="price">4 900 ₽</div>
+      <button class="cta">Сделать сегодня</button>
+    </div>
+
+    <div class="card">
+      <h3>Санузел</h3>
+      <div class="price">4 500 ₽</div>
+      <button class="cta">Сделать сегодня</button>
+    </div>
+  </div>
 </section>
 
-<!-- PROCESS -->
 <section>
   <h2>Как мы делаем за 1 день</h2>
 
   <div class="steps">
-    <div><div class="step-number">01</div>Вы выбираете решение</div>
-    <div><div class="step-number">02</div>Полотно уже готово</div>
-    <div><div class="step-number">03</div>Монтаж сегодня</div>
-    <div><div class="step-number">04</div>Готово</div>
+    <div>
+      <div class="step-number">01</div>
+      <p>Вы выбираете решение</p>
+    </div>
+    <div>
+      <div class="step-number">02</div>
+      <p>Полотно уже готово</p>
+    </div>
+    <div>
+      <div class="step-number">03</div>
+      <p>Монтаж сегодня</p>
+    </div>
+    <div>
+      <div class="step-number">04</div>
+      <p>Готово</p>
+    </div>
   </div>
 </section>
 
-<!-- PRICING -->
 <section>
   <h2>Фиксированная цена</h2>
 
@@ -292,15 +154,11 @@
   </table>
 </section>
 
-<!-- CONTACT -->
-<section class="contact" id="contact">
-  <h2>Можно сделать уже сегодня</h2>
-<p class="subtitle">
-Напишите или позвоните — подскажем решение под вашу квартиру
-</p>  <a href="tel:+79179773837">+7 (917) 977-38-37</a>
+<section class="contact">
+  <h2>Сделаем потолок сегодня</h2>
+  <a href="tel:+79990000000">+7 (999) 000-00-00</a>
   <p>Самара · Новокуйбышевск</p>
 </section>
 
 </body>
 </html>
-
