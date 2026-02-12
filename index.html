@@ -187,14 +187,51 @@
     padding-bottom: 90px;
   }
 }
-  </style>
+    .card {
+  position: relative;
+  overflow: hidden;
+}
+
+.ceiling-overlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 220px;
+  pointer-events: none;
+  mix-blend-mode: multiply;
+  opacity: 0;
+  transition: opacity 0.2s ease;
+}
+
+.color-switch {
+  display: flex;
+  gap: 8px;
+  margin-top: 10px;
+}
+
+.color-dot {
+  width: 18px;
+  height: 18px;
+  border-radius: 50%;
+  cursor: pointer;
+  border: 2px solid #fff;
+  box-shadow: 0 0 0 1px #ccc;
+}  </style>
   
 </head>
   <!-- Sticky mobile CTA -->
 <div class="sticky-cta">
   <a href="#contact">Сделать сегодня</a>
 </div>
-<body>
+
+  <script>
+function changeColor(id, color) {
+  const overlay = document.getElementById(id);
+  overlay.style.background = color;
+  overlay.style.opacity = color === '#ffffff' ? 0 : 0.4;
+}
+</script><body>
 
 <header>
   <div class="header-inner">
@@ -220,12 +257,28 @@
   <div class="cards">
 
     <div class="card">
-      <img src="kitchen.jpg" alt="">
-      <h3>Кухня 6 м²</h3>
-      <div class="price">6 900 ₽</div>
-      <a href="#contact" class="cta">Сделать сегодня</a>
-    </div>
+  <img src="kitchen.jpg" alt="">
+  <div class="ceiling-overlay" id="kitchenOverlay"></div>
 
+  <h3>Кухня 6 м²</h3>
+  <div class="price">6 900 ₽</div>
+
+  <div class="color-switch">
+    <div class="color-dot" style="background:#ffffff"
+      onclick="changeColor('kitchenOverlay','#ffffff')"></div>
+
+    <div class="color-dot" style="background:#2F80FF"
+      onclick="changeColor('kitchenOverlay','#2F80FF')"></div>
+
+    <div class="color-dot" style="background:#333333"
+      onclick="changeColor('kitchenOverlay','#333333')"></div>
+
+    <div class="color-dot" style="background:#f5e1c8"
+      onclick="changeColor('kitchenOverlay','#f5e1c8')"></div>
+  </div>
+
+  <a href="#contact" class="cta">Сделать сегодня</a>
+</div>
     <div class="card">
       <img src="room.jpg" alt="">
       <h3>Комната 18 м²</h3>
@@ -285,7 +338,31 @@
   </table>
 </section>
 
-<section class="contact" id="contact">
+  <section>
+  <h2>Коммерческие и нестандартные решения</h2>
+  <p class="subtitle">
+  Работаем не только с квартирами.
+  </p>
+
+  <ul style="color:#555; line-height:1.6;">
+    <li>Офисы и коммерческие помещения</li>
+    <li>Цветные потолки и дизайнерские решения</li>
+    <li>Матовые, глянцевые и текстурные полотна</li>
+    <li>Сложные формы и нестандартные проекты</li>
+  </ul>
+</section>
+
+  <section>
+  <h2>Почему выбирают нас</h2>
+  <ul style="color:#555; line-height:1.6;">
+    <li>Более 10 лет на рынке</li>
+    <li>Работаем в Самаре и Новокуйбышевске</li>
+    <li>Монтаж 2–3 часа</li>
+    <li>Без предоплаты</li>
+  </ul>
+</section>
+  
+  <section class="contact" id="contact">
   <h2>Сделаем потолок сегодня</h2>
   <a href="tel:+79179773837">+7 (917) 977-38-37</a>
   <p>Самара · Новокуйбышевск</p>
