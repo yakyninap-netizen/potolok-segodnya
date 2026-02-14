@@ -86,14 +86,20 @@ section {
   position: absolute;
   top: 0;
   left: 0;
-  height: 60%;
+  height: 45%;
   width: 100%;
   opacity: 0;
   transition: opacity 0.2s ease;
-  mix-blend-mode: multiply;
   pointer-events: none;
+  background: linear-gradient(
+    to bottom,
+    rgba(0,0,0,0.4) 0%,
+    rgba(0,0,0,0.25) 40%,
+    rgba(0,0,0,0) 100%
+  );
+  mix-blend-mode: multiply;
 }
-
+  
 .color-switch {
   display: flex;
   gap: 8px;
@@ -142,25 +148,45 @@ section {
   body {
     padding-bottom: 90px;
   }
+
+  .logo {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  font-weight: 600;
+  font-size: 14px;
 }
-</style>
+
+.logo-line {
+  width: 28px;
+  height: 2px;
+  background: #111;
+}
+
+.logo-dot {
+  width: 6px;
+  height: 6px;
+  background: #2F80FF;
+  border-radius: 50%;
+}
+  </style>
 </head>
 
 <body>
 
 <header>
-<div class="header-inner">
-  <strong>ПОТОЛОК.СЕГОДНЯ</strong>
-  <a href="#contact" class="cta">Сделать сегодня</a>
-</div>
+  <div class="header-inner">
+
+    <div class="logo">
+      <div class="logo-line"></div>
+      <div class="logo-dot"></div>
+      <span>ПОТОЛОК.СЕГОДНЯ</span>
+    </div>
+
+    <a href="#contact" class="cta">Сделать сегодня</a>
+  </div>
 </header>
-
-<section>
-<h1>Натяжные потолки сегодня</h1>
-<p class="subtitle">98% заказов — установка в день обращения</p>
-<a href="#contact" class="cta">Сделать сегодня</a>
-</section>
-
+  
 <section>
 <h2>Типовые решения</h2>
 
@@ -219,12 +245,29 @@ section {
 <div class="card">
   <div class="image-wrapper">
     <img src="hallway.jpg">
+    <div class="ceiling-overlay" id="hallOverlay"></div>
   </div>
+
   <h3>Коридор</h3>
   <div class="price">4 900 ₽</div>
+
+  <div class="color-switch">
+    <div class="color-dot" style="background:#ffffff"
+      onclick="changeColor('hallOverlay','#ffffff')"></div>
+
+    <div class="color-dot" style="background:#2F80FF"
+      onclick="changeColor('hallOverlay','#2F80FF')"></div>
+
+    <div class="color-dot" style="background:#333333"
+      onclick="changeColor('hallOverlay','#333333')"></div>
+
+    <div class="color-dot" style="background:#f5e1c8"
+      onclick="changeColor('hallOverlay','#f5e1c8')"></div>
+  </div>
+
   <a href="#contact" class="cta">Сделать сегодня</a>
 </div>
-
+  
 <!-- КАФЕ -->
 <div class="card">
   <div class="image-wrapper">
@@ -280,14 +323,23 @@ section {
 <script>
 function changeColor(id, color){
   const overlay = document.getElementById(id);
+
   if(color === '#ffffff'){
     overlay.style.opacity = 0;
     return;
   }
-  overlay.style.background = color;
-  overlay.style.opacity = 0.35;
+
+  overlay.style.background = `
+    linear-gradient(
+      to bottom,
+      ${color}CC 0%,
+      ${color}99 40%,
+      rgba(0,0,0,0) 100%
+    )
+  `;
+
+  overlay.style.opacity = 1;
 }
 </script>
-
 </body>
 </html>
