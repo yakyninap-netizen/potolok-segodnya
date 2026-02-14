@@ -1,165 +1,125 @@
 <!DOCTYPE html>
 <html lang="ru">
 <head>
-  <meta charset="UTF-8">
-  <title>ПОТОЛОК.СЕГОДНЯ — натяжные потолки сегодня</title>
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>ПОТОЛОК.СЕГОДНЯ</title>
 
-  <style>
-    body {
-      margin: 0;
-      font-family: Inter, Arial, sans-serif;
-      color: #111;
-      background: #fff;
-    }
+<style>
+body {
+  margin: 0;
+  font-family: Arial, sans-serif;
+  background: #fff;
+  color: #111;
+}
 
-    header {
-      border-bottom: 1px solid #EDEDED;
-      background: #fff;
-    }
+html {
+  scroll-behavior: smooth;
+}
 
-    .header-inner {
-      max-width: 1100px;
-      margin: 0 auto;
-      padding: 16px 20px;
-      display: flex;
-      justify-content: space-between;
-      align-items: center;
-    }
+header {
+  border-bottom: 1px solid #EDEDED;
+}
 
-    .logo {
-      display: flex;
-      align-items: center;
-      gap: 10px;
-      font-weight: 600;
-      font-size: 14px;
-    }
+.header-inner {
+  max-width: 1100px;
+  margin: 0 auto;
+  padding: 16px 20px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
 
-    .logo-line {
-      width: 28px;
-      height: 2px;
-      background: #111;
-    }
+.cta {
+  background: #2F80FF;
+  color: #fff;
+  padding: 14px 26px;
+  text-decoration: none;
+  display: inline-block;
+  font-size: 15px;
+}
 
-    .logo-dot {
-      width: 6px;
-      height: 6px;
-      background: #2F80FF;
-      border-radius: 50%;
-    }
+section {
+  padding: 60px 20px;
+  max-width: 1100px;
+  margin: 0 auto;
+}
 
-    .header-cta {
-      background: #2F80FF;
-      color: #fff;
-      padding: 10px 18px;
-      text-decoration: none;
-      font-size: 14px;
-    }
+.subtitle {
+  color: #555;
+}
 
-    section {
-      padding: 60px 20px;
-      max-width: 1100px;
-      margin: 0 auto;
-    }
+.cards {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+  gap: 24px;
+}
 
-    h1, h2 {
-      margin-bottom: 16px;
-    }
-
-    .subtitle {
-      color: #555;
-      margin-bottom: 32px;
-    }
-
-    .cta {
-      background: #2F80FF;
-      color: #fff;
-      border: none;
-      padding: 14px 26px;
-      font-size: 15px;
-      cursor: pointer;
-      text-decoration: none;
-      display: inline-block;
-    }
-
-    .cards {
-      display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
-      gap: 20px;
-    }
-
-    .card {
+.card {
   border: 1px solid #EDEDED;
   padding: 20px;
   background: #fff;
   transition: transform 0.2s ease, box-shadow 0.2s ease;
 }
-    .card:hover {
+
+.card:hover {
   transform: translateY(-4px);
-  box-shadow: 0 12px 40px rgba(0, 0, 0, 0.12);
+  box-shadow: 0 12px 40px rgba(0,0,0,0.12);
 }
-    .card img {
-      width: 100%;
-      height: 220px;
-      object-fit: cover;
-      object-position: center top;
-      display: block;
-      margin-bottom: 16px;
-      border-radius: 4px;
-    }
 
-    .price {
-      font-size: 22px;
-      font-weight: 700;
-      margin: 16px 0;
-    }
-
-    .steps {
-      display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
-      gap: 20px;
-    }
-
-    .step-number {
-      color: #2F80FF;
-      font-weight: 700;
-      margin-bottom: 8px;
-    }
-
-    table {
-      width: 100%;
-      border-collapse: collapse;
-      margin-top: 20px;
-    }
-
-    th, td {
-      border-bottom: 1px solid #EDEDED;
-      padding: 12px;
-      text-align: left;
-    }
-
-    .contact a {
-      display: block;
-      font-size: 22px;
-      margin: 12px 0;
-      color: #2F80FF;
-      text-decoration: none;
-    }
-
-    @media (max-width: 600px) {
-      section {
-        padding: 40px 16px;
-      }
-    }
-    html {
-  scroll-behavior: smooth;
+.image-wrapper {
+  position: relative;
+  overflow: hidden;
+  border-radius: 4px;
+  margin-bottom: 16px;
 }
-    /* Sticky mobile button */
+
+.image-wrapper img {
+  width: 100%;
+  height: 220px;
+  object-fit: cover;
+  object-position: center top;
+  display: block;
+}
+
+.ceiling-overlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  height: 60%;
+  width: 100%;
+  opacity: 0;
+  transition: opacity 0.2s ease;
+  mix-blend-mode: multiply;
+  pointer-events: none;
+}
+
+.color-switch {
+  display: flex;
+  gap: 8px;
+  margin: 10px 0;
+}
+
+.color-dot {
+  width: 18px;
+  height: 18px;
+  border-radius: 50%;
+  cursor: pointer;
+  border: 2px solid #fff;
+  box-shadow: 0 0 0 1px #ccc;
+}
+
+.price {
+  font-weight: 700;
+  font-size: 20px;
+  margin: 10px 0;
+}
+
 .sticky-cta {
   display: none;
 }
 
-@media (max-width: 768px) {
+@media (max-width:768px){
   .sticky-cta {
     display: flex;
     position: fixed;
@@ -175,198 +135,159 @@
     background: #2F80FF;
     color: #fff;
     padding: 16px 0;
-    font-size: 16px;
-    font-weight: 600;
-    text-decoration: none;
     border-radius: 8px;
-    box-shadow: 0 8px 24px rgba(0,0,0,0.2);
+    text-decoration: none;
   }
 
-  /* чтобы контент не прятался под кнопкой */
   body {
     padding-bottom: 90px;
   }
 }
-    .card {
-  position: relative;
-  overflow: hidden;
-}
-
-.ceiling-overlay {
-  position: absolute;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 220px;
-  pointer-events: none;
-  mix-blend-mode: multiply;
-  opacity: 0;
-  transition: opacity 0.2s ease;
-}
-
-.color-switch {
-  display: flex;
-  gap: 8px;
-  margin-top: 10px;
-}
-
-.color-dot {
-  width: 18px;
-  height: 18px;
-  border-radius: 50%;
-  cursor: pointer;
-  border: 2px solid #fff;
-  box-shadow: 0 0 0 1px #ccc;
-}  </style>
-  
+</style>
 </head>
-  <!-- Sticky mobile CTA -->
-<div class="sticky-cta">
-  <a href="#contact">Сделать сегодня</a>
-</div>
 
-  <script>
-function changeColor(id, color) {
-  const overlay = document.getElementById(id);
-  overlay.style.background = color;
-  overlay.style.opacity = color === '#ffffff' ? 0 : 0.4;
-}
-</script><body>
+<body>
 
 <header>
-  <div class="header-inner">
-    <div class="logo">
-      <div class="logo-line"></div>
-      <div class="logo-dot"></div>
-      <span>ПОТОЛОК.СЕГОДНЯ</span>
-    </div>
-    <a href="#contact" class="cta">Сделать сегодня</a>
-  </div>
+<div class="header-inner">
+  <strong>ПОТОЛОК.СЕГОДНЯ</strong>
+  <a href="#contact" class="cta">Сделать сегодня</a>
+</div>
 </header>
 
 <section>
-  <h1>Натяжные потолки сегодня</h1>
-  <p class="subtitle">98% заказов — установка в день обращения</p>
-  <a href="#contact" class="cta">Сделать сегодня</a>
+<h1>Натяжные потолки сегодня</h1>
+<p class="subtitle">98% заказов — установка в день обращения</p>
+<a href="#contact" class="cta">Сделать сегодня</a>
 </section>
 
 <section>
-  <h2>Выберите свою квартиру</h2>
-  <p class="subtitle">Типовые решения. Фиксированная цена.</p>
+<h2>Типовые решения</h2>
 
-  <div class="cards">
+<div class="cards">
 
-    <div class="card">
-  <img src="kitchen.jpg" alt="">
-  <div class="ceiling-overlay" id="kitchenOverlay"></div>
-
+<!-- КУХНЯ -->
+<div class="card">
+  <div class="image-wrapper">
+    <img src="kitchen.jpg">
+    <div class="ceiling-overlay" id="kitchenOverlay"></div>
+  </div>
   <h3>Кухня 6 м²</h3>
   <div class="price">6 900 ₽</div>
-
   <div class="color-switch">
-    <div class="color-dot" style="background:#ffffff"
-      onclick="changeColor('kitchenOverlay','#ffffff')"></div>
-
-    <div class="color-dot" style="background:#2F80FF"
-      onclick="changeColor('kitchenOverlay','#2F80FF')"></div>
-
-    <div class="color-dot" style="background:#333333"
-      onclick="changeColor('kitchenOverlay','#333333')"></div>
-
-    <div class="color-dot" style="background:#f5e1c8"
-      onclick="changeColor('kitchenOverlay','#f5e1c8')"></div>
+    <div class="color-dot" style="background:#fff" onclick="changeColor('kitchenOverlay','#ffffff')"></div>
+    <div class="color-dot" style="background:#2F80FF" onclick="changeColor('kitchenOverlay','#2F80FF')"></div>
+    <div class="color-dot" style="background:#333" onclick="changeColor('kitchenOverlay','#333333')"></div>
+    <div class="color-dot" style="background:#f5e1c8" onclick="changeColor('kitchenOverlay','#f5e1c8')"></div>
   </div>
-
   <a href="#contact" class="cta">Сделать сегодня</a>
 </div>
-    <div class="card">
-      <img src="room.jpg" alt="">
-      <h3>Комната 18 м²</h3>
-      <div class="price">9 900 ₽</div>
-      <a href="#contact" class="cta">Сделать сегодня</a>
-    </div>
 
-    <div class="card">
-      <img src="hallway.jpg" alt="">
-      <h3>Коридор</h3>
-      <div class="price">4 900 ₽</div>
-      <a href="#contact" class="cta">Сделать сегодня</a>
-    </div>
-
-    <div class="card">
-      <img src="bathroom.jpg" alt="">
-      <h3>Санузел</h3>
-      <div class="price">4 500 ₽</div>
-      <a href="#contact" class="cta">Сделать сегодня</a>
-    </div>
-
+<!-- КОМНАТА -->
+<div class="card">
+  <div class="image-wrapper">
+    <img src="room.jpg">
+    <div class="ceiling-overlay" id="roomOverlay"></div>
   </div>
+  <h3>Комната 18 м²</h3>
+  <div class="price">9 900 ₽</div>
+  <div class="color-switch">
+    <div class="color-dot" style="background:#fff" onclick="changeColor('roomOverlay','#ffffff')"></div>
+    <div class="color-dot" style="background:#2F80FF" onclick="changeColor('roomOverlay','#2F80FF')"></div>
+    <div class="color-dot" style="background:#333" onclick="changeColor('roomOverlay','#333333')"></div>
+  </div>
+  <a href="#contact" class="cta">Сделать сегодня</a>
+</div>
+
+<!-- ВАННА -->
+<div class="card">
+  <div class="image-wrapper">
+    <img src="bathroom.jpg">
+    <div class="ceiling-overlay" id="bathOverlay"></div>
+  </div>
+  <h3>Санузел</h3>
+  <div class="price">4 500 ₽</div>
+  <div class="color-switch">
+    <div class="color-dot" style="background:#fff" onclick="changeColor('bathOverlay','#ffffff')"></div>
+    <div class="color-dot" style="background:#333" onclick="changeColor('bathOverlay','#333333')"></div>
+    <div class="color-dot" style="background:#2F80FF" onclick="changeColor('bathOverlay','#2F80FF')"></div>
+  </div>
+  <a href="#contact" class="cta">Сделать сегодня</a>
+</div>
+
+<!-- КОРИДОР -->
+<div class="card">
+  <div class="image-wrapper">
+    <img src="hallway.jpg">
+  </div>
+  <h3>Коридор</h3>
+  <div class="price">4 900 ₽</div>
+  <a href="#contact" class="cta">Сделать сегодня</a>
+</div>
+
+<!-- КАФЕ -->
+<div class="card">
+  <div class="image-wrapper">
+    <img src="cafe.jpg">
+  </div>
+  <h3>Кафе и коммерция</h3>
+  <p class="subtitle">Цветные и дизайнерские потолки</p>
+  <a href="#contact" class="cta">Рассчитать проект</a>
+</div>
+
+<!-- САЛОН -->
+<div class="card">
+  <div class="image-wrapper">
+    <img src="salon.jpg">
+  </div>
+  <h3>Салоны красоты</h3>
+  <a href="#contact" class="cta">Рассчитать проект</a>
+</div>
+
+<!-- НЕСТАНДАРТ -->
+<div class="card">
+  <div class="image-wrapper">
+    <img src="glossy.jpg">
+  </div>
+  <h3>Нестандартные решения</h3>
+  <p class="subtitle">Глянцевые, цветные, сложные формы</p>
+  <a href="#contact" class="cta">Рассчитать проект</a>
+</div>
+
+</div>
 </section>
 
 <section>
-  <h2>Как мы делаем за 1 день</h2>
-
-  <div class="steps">
-    <div>
-      <div class="step-number">01</div>
-      <p>Вы выбираете решение</p>
-    </div>
-    <div>
-      <div class="step-number">02</div>
-      <p>Полотно уже готово</p>
-    </div>
-    <div>
-      <div class="step-number">03</div>
-      <p>Монтаж сегодня</p>
-    </div>
-    <div>
-      <div class="step-number">04</div>
-      <p>Готово</p>
-    </div>
-  </div>
+<h2>О компании</h2>
+<ul>
+<li>Более 10 лет на рынке</li>
+<li>Работаем в Самаре и Новокуйбышевске</li>
+<li>Коммерческие помещения</li>
+<li>Цветные и текстурные потолки</li>
+</ul>
 </section>
 
-<section>
-  <h2>Фиксированная цена</h2>
-
-  <table>
-    <tr><th>Помещение</th><th>Цена</th><th>Срок</th></tr>
-    <tr><td>Кухня 6 м²</td><td>6 900 ₽</td><td>Сегодня</td></tr>
-    <tr><td>Комната 18 м²</td><td>9 900 ₽</td><td>Сегодня</td></tr>
-    <tr><td>Коридор</td><td>4 900 ₽</td><td>Сегодня</td></tr>
-    <tr><td>Санузел</td><td>4 500 ₽</td><td>Сегодня</td></tr>
-  </table>
+<section id="contact">
+<h2>Сделаем потолок сегодня</h2>
+<a href="tel:+79179773837">+7 (917) 977-38-37</a>
+<p>Самара · Новокуйбышевск</p>
 </section>
 
-  <section>
-  <h2>Коммерческие и нестандартные решения</h2>
-  <p class="subtitle">
-  Работаем не только с квартирами.
-  </p>
+<div class="sticky-cta">
+<a href="#contact">Сделать сегодня</a>
+</div>
 
-  <ul style="color:#555; line-height:1.6;">
-    <li>Офисы и коммерческие помещения</li>
-    <li>Цветные потолки и дизайнерские решения</li>
-    <li>Матовые, глянцевые и текстурные полотна</li>
-    <li>Сложные формы и нестандартные проекты</li>
-  </ul>
-</section>
-
-  <section>
-  <h2>Почему выбирают нас</h2>
-  <ul style="color:#555; line-height:1.6;">
-    <li>Более 10 лет на рынке</li>
-    <li>Работаем в Самаре и Новокуйбышевске</li>
-    <li>Монтаж 2–3 часа</li>
-    <li>Без предоплаты</li>
-  </ul>
-</section>
-  
-  <section class="contact" id="contact">
-  <h2>Сделаем потолок сегодня</h2>
-  <a href="tel:+79179773837">+7 (917) 977-38-37</a>
-  <p>Самара · Новокуйбышевск</p>
-</section>
+<script>
+function changeColor(id, color){
+  const overlay = document.getElementById(id);
+  if(color === '#ffffff'){
+    overlay.style.opacity = 0;
+    return;
+  }
+  overlay.style.background = color;
+  overlay.style.opacity = 0.35;
+}
+</script>
 
 </body>
 </html>
