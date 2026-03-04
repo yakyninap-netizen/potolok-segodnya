@@ -1,13 +1,11 @@
 <!DOCTYPE html>
 <html lang="ru">
 <head>
-
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
 <title>Натяжные потолки Самара — ПОТОЛОК.СЕГОДНЯ</title>
-
-<meta name="description" content="Натяжные потолки в Самаре и Новокуйбышевске. Установка за 2–3 часа. 98% заказов в день обращения.">
+<meta name="description" content="Натяжные потолки Самара и Новокуйбышевск. Установка за 2–3 часа. 98% заказов в день обращения.">
 
 <script type="application/ld+json">
 {
@@ -30,6 +28,10 @@ color:#111;
 
 header{
 border-bottom:1px solid #eee;
+background:#fff;
+position:sticky;
+top:0;
+z-index:10;
 }
 
 .header-inner{
@@ -74,17 +76,39 @@ display:inline-block;
 .hero{
 text-align:center;
 padding:80px 20px;
-background:linear-gradient(to bottom,#fff,#f6f8fb);
+background:linear-gradient(#fff,#f6f8fb);
 }
 
 .hero h1{
 font-size:34px;
-margin-bottom:12px;
+margin-bottom:10px;
 }
 
 .hero strong{
 color:#2F80FF;
 font-size:22px;
+}
+
+.hero-calc{
+margin-top:30px;
+display:flex;
+gap:10px;
+justify-content:center;
+flex-wrap:wrap;
+}
+
+.hero-calc input,
+.hero-calc select{
+padding:12px;
+border:1px solid #ccc;
+border-radius:6px;
+}
+
+.hero-result{
+font-size:24px;
+font-weight:700;
+color:#2F80FF;
+margin-top:10px;
 }
 
 section{
@@ -133,16 +157,36 @@ box-shadow:0 15px 40px rgba(0,0,0,0.08);
 }
 
 .image-wrapper{
-aspect-ratio: 16 / 9;
+height:260px;
 overflow:hidden;
+position:relative;
 }
 
 .image-wrapper img{
 width:100%;
 height:100%;
 object-fit:cover;
+object-position:top;
 }
- 
+
+/* эффект глянца */
+
+.gloss{
+position:absolute;
+top:0;
+left:-100%;
+width:60%;
+height:100%;
+background:linear-gradient(120deg,rgba(255,255,255,0) 0%,rgba(255,255,255,.35) 50%,rgba(255,255,255,0) 100%);
+animation:shine 6s infinite;
+}
+
+@keyframes shine{
+0%{left:-100%}
+50%{left:120%}
+100%{left:120%}
+}
+
 .ceiling-overlay{
 position:absolute;
 top:0;
@@ -166,7 +210,7 @@ margin:6px 0;
 .color-switch{
 display:flex;
 gap:8px;
-margin:8px 0 14px;
+margin:10px 0 16px;
 }
 
 .color-dot{
@@ -178,29 +222,6 @@ border:2px solid #fff;
 box-shadow:0 0 0 1px #ccc;
 }
 
-.calc-box{
-background:#f6f8fb;
-padding:30px;
-border-radius:12px;
-text-align:center;
-}
-
-.calc-box input,
-.calc-box select{
-padding:12px;
-width:100%;
-max-width:280px;
-margin-bottom:10px;
-border:1px solid #ccc;
-border-radius:6px;
-}
-
-.result{
-font-size:22px;
-font-weight:700;
-margin-top:10px;
-}
-
 footer{
 background:#111;
 color:#fff;
@@ -209,12 +230,41 @@ padding:30px;
 margin-top:40px;
 }
 
-@media(max-width:768px){
+/* липкая кнопка */
 
-.hero h1{
-font-size:26px;
+.sticky-call{
+position:fixed;
+bottom:20px;
+left:20px;
+right:20px;
+background:#2F80FF;
+color:#fff;
+text-align:center;
+padding:16px;
+border-radius:10px;
+font-weight:700;
+text-decoration:none;
+box-shadow:0 10px 30px rgba(0,0,0,.2);
+z-index:999;
 }
 
+/* плавающий номер */
+
+.float-phone{
+position:fixed;
+top:20px;
+right:20px;
+background:#2F80FF;
+color:#fff;
+padding:10px 16px;
+border-radius:20px;
+font-weight:600;
+text-decoration:none;
+display:none;
+}
+
+.show{
+display:block;
 }
 
 </style>
@@ -223,6 +273,7 @@ font-size:26px;
 <body>
 
 <header>
+
 <div class="header-inner">
 
 <div class="logo">
@@ -234,7 +285,9 @@ font-size:26px;
 <a href="tel:+79179773837" class="cta">Позвонить</a>
 
 </div>
+
 </header>
+
 
 <section class="hero">
 
@@ -244,11 +297,26 @@ font-size:26px;
 
 <strong>от 390 ₽ / м²</strong>
 
-<br><br>
+<div class="hero-calc">
+
+<input type="number" id="area" placeholder="Площадь м²" oninput="calculate()">
+
+<select id="type" onchange="calculate()">
+<option value="390">Матовый</option>
+<option value="550">Сатиновый</option>
+<option value="890">Дизайнерский</option>
+</select>
+
+</div>
+
+<div class="hero-result" id="result">Введите площадь</div>
+
+<br>
 
 <a href="tel:+79179773837" class="cta">Сделать сегодня</a>
 
 </section>
+
 
 <section class="social-proof">
 
@@ -257,16 +325,14 @@ font-size:26px;
 <div class="stats">
 
 <div class="stat"><strong>10+</strong> лет</div>
-
 <div class="stat"><strong>1000+</strong> объектов</div>
-
-<div class="stat"><strong>2-3 часа</strong> монтаж</div>
-
+<div class="stat"><strong>2–3 часа</strong> монтаж</div>
 <div class="stat"><strong>Самара</strong> и Новокуйбышевск</div>
 
 </div>
 
 </section>
+
 
 <section>
 
@@ -274,16 +340,13 @@ font-size:26px;
 
 <div class="cards">
 
-<!-- кухня -->
 
 <div class="card">
 
 <div class="image-wrapper">
-
 <img src="kitchen.jpg">
-
+<div class="gloss"></div>
 <div class="ceiling-overlay" id="kitchenOverlay"></div>
-
 </div>
 
 <div class="card-body">
@@ -294,32 +357,25 @@ font-size:26px;
 
 <div class="color-switch">
 
-<div class="color-dot" style="background:#fff"
-onclick="changeColor('kitchenOverlay','#ffffff')"></div>
-
-<div class="color-dot" style="background:#2F80FF"
-onclick="changeColor('kitchenOverlay','#2F80FF')"></div>
-
-<div class="color-dot" style="background:#333"
-onclick="changeColor('kitchenOverlay','#333333')"></div>
+<div class="color-dot" style="background:#fff" onclick="changeColor('kitchenOverlay','#ffffff')"></div>
+<div class="color-dot" style="background:#2F80FF" onclick="changeColor('kitchenOverlay','#2F80FF')"></div>
+<div class="color-dot" style="background:#333" onclick="changeColor('kitchenOverlay','#333333')"></div>
 
 </div>
 
 <a href="tel:+79179773837" class="cta">Позвонить</a>
 
 </div>
+
 </div>
 
-<!-- комната -->
 
 <div class="card">
 
 <div class="image-wrapper">
-
 <img src="room.jpg">
-
+<div class="gloss"></div>
 <div class="ceiling-overlay" id="roomOverlay"></div>
-
 </div>
 
 <div class="card-body">
@@ -330,105 +386,37 @@ onclick="changeColor('kitchenOverlay','#333333')"></div>
 
 <div class="color-switch">
 
-<div class="color-dot" style="background:#fff"
-onclick="changeColor('roomOverlay','#ffffff')"></div>
-
-<div class="color-dot" style="background:#2F80FF"
-onclick="changeColor('roomOverlay','#2F80FF')"></div>
-
-<div class="color-dot" style="background:#333"
-onclick="changeColor('roomOverlay','#333333')"></div>
+<div class="color-dot" style="background:#fff" onclick="changeColor('roomOverlay','#ffffff')"></div>
+<div class="color-dot" style="background:#2F80FF" onclick="changeColor('roomOverlay','#2F80FF')"></div>
+<div class="color-dot" style="background:#333" onclick="changeColor('roomOverlay','#333333')"></div>
 
 </div>
 
 <a href="tel:+79179773837" class="cta">Позвонить</a>
 
 </div>
-</div>
-
-<!-- коммерция -->
-
-<div class="card">
-
-<div class="image-wrapper">
-
-<img src="cafe.jpg">
 
 </div>
 
-<div class="card-body">
-
-<h3>Кафе и коммерция</h3>
-
-<div class="price">Индивидуальный проект</div>
-
-<a href="tel:+79179773837" class="cta">Рассчитать</a>
-
-</div>
-</div>
-
-<div class="card">
-
-<div class="image-wrapper">
-
-<img src="salon.jpg">
-
-</div>
-
-<div class="card-body">
-
-<h3>Салоны красоты</h3>
-
-<div class="price">Индивидуальный проект</div>
-
-<a href="tel:+79179773837" class="cta">Рассчитать</a>
-
-</div>
-</div>
 
 </div>
 
 </section>
 
-<section>
-
-<h2>Калькулятор стоимости</h2>
-
-<div class="calc-box">
-
-<input type="number" id="area" placeholder="Площадь (м²)">
-
-<select id="type">
-
-<option value="390">Матовый — 390 ₽/м²</option>
-
-<option value="550">Сатиновый — 550 ₽/м²</option>
-
-<option value="890">Дизайнерский — 890 ₽/м²</option>
-
-</select>
-
-<button class="cta" onclick="calculate()">Рассчитать</button>
-
-<div class="result" id="result"></div>
-
-<br>
-
-<a href="tel:+79179773837" class="cta">Позвонить</a>
-
-</div>
-
-</section>
 
 <footer>
 
 <p>ПОТОЛОК.СЕГОДНЯ</p>
-
 <p>☎ +7 (917) 977-38-37</p>
-
 <p>Самара · Новокуйбышевск</p>
 
 </footer>
+
+
+<a href="tel:+79179773837" class="sticky-call">📞 Позвонить сейчас</a>
+
+<a href="tel:+79179773837" class="float-phone" id="floatPhone">Позвонить</a>
+
 
 <script>
 
@@ -437,11 +425,8 @@ function changeColor(id,color){
 const overlay=document.getElementById(id);
 
 if(color==='#ffffff'){
-
 overlay.style.opacity=0;
-
 return;
-
 }
 
 overlay.style.background=
@@ -457,7 +442,6 @@ overlay.style.opacity=1;
 function calculate(){
 
 let area=document.getElementById("area").value;
-
 let price=document.getElementById("type").value;
 
 if(area>0){
@@ -466,8 +450,7 @@ let total=area*price;
 
 if(total<5000){total=5000;}
 
-document.getElementById("result").innerHTML=
-"Примерная стоимость: "+total.toLocaleString()+" ₽";
+document.getElementById("result").innerHTML="≈ "+total.toLocaleString()+" ₽";
 
 }else{
 
@@ -476,6 +459,20 @@ document.getElementById("result").innerHTML="Введите площадь";
 }
 
 }
+
+/* плавающий номер */
+
+window.addEventListener("scroll",function(){
+
+let phone=document.getElementById("floatPhone");
+
+if(window.scrollY>300){
+phone.classList.add("show");
+}else{
+phone.classList.remove("show");
+}
+
+});
 
 </script>
 
