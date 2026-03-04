@@ -1,10 +1,13 @@
 <!DOCTYPE html>
 <html lang="ru">
+
 <head>
+
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
 <title>Натяжные потолки Самара — ПОТОЛОК.СЕГОДНЯ</title>
+
 <meta name="description" content="Натяжные потолки Самара и Новокуйбышевск. Установка за 2–3 часа. 98% заказов в день обращения.">
 
 <script type="application/ld+json">
@@ -169,8 +172,6 @@ object-fit:cover;
 object-position:top;
 }
 
-/* эффект глянца */
-
 .gloss{
 position:absolute;
 top:0;
@@ -230,8 +231,6 @@ padding:30px;
 margin-top:40px;
 }
 
-/* липкая кнопка */
-
 .sticky-call{
 position:fixed;
 bottom:20px;
@@ -247,8 +246,6 @@ text-decoration:none;
 box-shadow:0 10px 30px rgba(0,0,0,.2);
 z-index:999;
 }
-
-/* плавающий номер */
 
 .float-phone{
 position:fixed;
@@ -268,9 +265,12 @@ display:block;
 }
 
 </style>
+
 </head>
 
+
 <body>
+
 
 <header>
 
@@ -340,6 +340,7 @@ display:block;
 
 <div class="cards">
 
+<!-- кухня -->
 
 <div class="card">
 
@@ -370,6 +371,8 @@ display:block;
 </div>
 
 
+<!-- комната -->
+
 <div class="card">
 
 <div class="image-wrapper">
@@ -399,6 +402,81 @@ display:block;
 </div>
 
 
+<!-- санузел -->
+
+<div class="card">
+<div class="image-wrapper">
+<img src="bathroom.jpg">
+<div class="gloss"></div>
+</div>
+<div class="card-body">
+<h3>Санузел</h3>
+<div class="price">4 500 ₽</div>
+<a href="tel:+79179773837" class="cta">Позвонить</a>
+</div>
+</div>
+
+
+<!-- коридор -->
+
+<div class="card">
+<div class="image-wrapper">
+<img src="hallway.jpg">
+<div class="gloss"></div>
+</div>
+<div class="card-body">
+<h3>Коридор</h3>
+<div class="price">4 900 ₽</div>
+<a href="tel:+79179773837" class="cta">Позвонить</a>
+</div>
+</div>
+
+
+<!-- кафе -->
+
+<div class="card">
+<div class="image-wrapper">
+<img src="cafe.jpg">
+<div class="gloss"></div>
+</div>
+<div class="card-body">
+<h3>Кафе и коммерция</h3>
+<div class="price">Индивидуальный проект</div>
+<a href="tel:+79179773837" class="cta">Рассчитать</a>
+</div>
+</div>
+
+
+<!-- салон -->
+
+<div class="card">
+<div class="image-wrapper">
+<img src="salon.jpg">
+<div class="gloss"></div>
+</div>
+<div class="card-body">
+<h3>Салоны красоты</h3>
+<div class="price">Индивидуальный проект</div>
+<a href="tel:+79179773837" class="cta">Рассчитать</a>
+</div>
+</div>
+
+
+<!-- нестандарт -->
+
+<div class="card">
+<div class="image-wrapper">
+<img src="glossy.jpg">
+<div class="gloss"></div>
+</div>
+<div class="card-body">
+<h3>Нестандартные решения</h3>
+<div class="price">Сложные формы</div>
+<a href="tel:+79179773837" class="cta">Рассчитать</a>
+</div>
+</div>
+
+
 </div>
 
 </section>
@@ -424,17 +502,14 @@ function changeColor(id,color){
 
 const overlay=document.getElementById(id);
 
+if(!overlay)return;
+
 if(color==='#ffffff'){
 overlay.style.opacity=0;
 return;
 }
 
-overlay.style.background=
-`linear-gradient(to bottom,
-${color}CC 0%,
-${color}99 40%,
-rgba(0,0,0,0) 100%)`;
-
+overlay.style.background=`linear-gradient(to bottom,${color}CC 0%,${color}99 40%,rgba(0,0,0,0) 100%)`;
 overlay.style.opacity=1;
 
 }
@@ -448,7 +523,7 @@ if(area>0){
 
 let total=area*price;
 
-if(total<5000){total=5000;}
+if(total<5000) total=5000;
 
 document.getElementById("result").innerHTML="≈ "+total.toLocaleString()+" ₽";
 
@@ -459,8 +534,6 @@ document.getElementById("result").innerHTML="Введите площадь";
 }
 
 }
-
-/* плавающий номер */
 
 window.addEventListener("scroll",function(){
 
@@ -475,6 +548,7 @@ phone.classList.remove("show");
 });
 
 </script>
+
 
 </body>
 </html>
