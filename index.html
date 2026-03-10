@@ -5,25 +5,45 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-<title>Натяжные потолки Самара — ПОТОЛОК.СЕГОДНЯ</title>
+<title>Натяжные потолки Самара и Новокуйбышевск — ПОТОЛОК.СЕГОДНЯ</title>
+
+<meta name="description" content="Натяжные потолки в Самаре и Новокуйбышевске. Установка за 2–3 часа. Цена от 390 ₽/м². Монтаж в день обращения.">
+
+<script type="application/ld+json">
+{
+ "@context":"https://schema.org",
+ "@type":"LocalBusiness",
+ "name":"ПОТОЛОК.СЕГОДНЯ",
+ "telephone":"+79179773837",
+ "areaServed":["Самара","Новокуйбышевск"],
+ "priceRange":"390-890"
+}
+</script>
 
 <style>
 
 body{
 margin:0;
 font-family:Arial;
-color:#111;
 background:#fff;
+color:#111;
 }
 
 header{
 border-bottom:1px solid #eee;
+background:#fff;
 }
 
 .container{
 max-width:1100px;
 margin:auto;
 padding:20px;
+}
+
+.header{
+display:flex;
+justify-content:space-between;
+align-items:center;
 }
 
 .logo{
@@ -67,40 +87,79 @@ font-size:36px;
 margin-bottom:10px;
 }
 
-.price{
+.hero-price{
 font-size:28px;
-color:#2F80FF;
 font-weight:700;
+color:#2F80FF;
 }
 
 .cards{
 display:grid;
 grid-template-columns:repeat(auto-fit,minmax(260px,1fr));
 gap:24px;
-margin-top:30px;
+margin-top:40px;
 }
 
 .card{
 border:1px solid #eee;
 border-radius:10px;
 overflow:hidden;
+background:#fff;
 }
 
-.card img{
+.image-wrapper{
+height:240px;
+position:relative;
+overflow:hidden;
+}
+
+.image-wrapper img{
 width:100%;
-height:220px;
+height:100%;
 object-fit:cover;
 object-position:top;
+}
+
+.ceiling-overlay{
+position:absolute;
+top:0;
+left:0;
+width:100%;
+height:45%;
+opacity:0;
+transition:.2s;
 }
 
 .card-body{
 padding:20px;
 }
 
+.price{
+font-size:20px;
+font-weight:700;
+margin:10px 0;
+}
+
+.color-switch{
+display:flex;
+gap:8px;
+margin-bottom:12px;
+}
+
+.color-dot{
+width:18px;
+height:18px;
+border-radius:50%;
+cursor:pointer;
+border:2px solid #fff;
+box-shadow:0 0 0 1px #ccc;
+}
+
 .features{
 display:grid;
 grid-template-columns:repeat(auto-fit,minmax(220px,1fr));
 gap:20px;
+margin-top:30px;
 }
 
 .feature{
@@ -109,12 +168,72 @@ padding:20px;
 border-radius:8px;
 }
 
+.calc{
+background:#f6f8fb;
+padding:40px;
+border-radius:10px;
+text-align:center;
+margin-top:40px;
+}
+
+.calc input,
+.calc select{
+padding:12px;
+margin:5px;
+border:1px solid #ccc;
+border-radius:6px;
+}
+
+.result{
+font-size:24px;
+font-weight:700;
+color:#2F80FF;
+margin-top:10px;
+}
+
+.apartment{
+display:grid;
+grid-template-columns:repeat(auto-fit,minmax(260px,1fr));
+gap:24px;
+margin-top:30px;
+}
+
+.apartment-card{
+border:1px solid #eee;
+padding:20px;
+border-radius:10px;
+cursor:pointer;
+text-align:center;
+}
+
+.apartment-card:hover{
+background:#f6f8fb;
+}
+
+.preview{
+text-align:center;
+margin-top:40px;
+}
+
+.preview img{
+width:100%;
+max-width:500px;
+}
+
+.preview-controls{
+margin-top:10px;
+}
+
+.preview-controls input{
+width:60px;
+}
+
 footer{
 background:#111;
 color:#fff;
 text-align:center;
-padding:30px;
-margin-top:40px;
+padding:40px 20px;
+margin-top:60px;
 }
 
 .sticky-call{
@@ -124,9 +243,9 @@ left:20px;
 right:20px;
 background:#2F80FF;
 color:#fff;
+text-align:center;
 padding:16px;
 border-radius:10px;
-text-align:center;
 text-decoration:none;
 font-weight:700;
 }
@@ -135,11 +254,13 @@ font-weight:700;
 
 </head>
 
+
 <body>
+
 
 <header>
 
-<div class="container" style="display:flex;justify-content:space-between;align-items:center;">
+<div class="container header">
 
 <div class="logo">
 <div class="logo-line"></div>
@@ -160,7 +281,7 @@ font-weight:700;
 
 <p>Монтаж за 2–3 часа</p>
 
-<div class="price">от 390 ₽ / м²</div>
+<div class="hero-price">от 390 ₽ / м²</div>
 
 <br>
 
@@ -176,35 +297,35 @@ font-weight:700;
 <div class="cards">
 
 <div class="card">
-<img src="kitchen.jpg">
-<div class="card-body">
-<h3>Кухня</h3>
-<p>от 6 900 ₽</p>
-</div>
-</div>
 
-<div class="card">
+<div class="image-wrapper">
 <img src="room.jpg">
+<div class="ceiling-overlay" id="roomOverlay"></div>
+</div>
+
 <div class="card-body">
+
 <h3>Комната</h3>
-<p>от 9 900 ₽</p>
-</div>
+
+<div class="price">9 900 ₽</div>
+
+<div class="color-switch">
+
+<div class="color-dot" style="background:#fff"
+onclick="changeColor('roomOverlay','#ffffff')"></div>
+
+<div class="color-dot" style="background:#2F80FF"
+onclick="changeColor('roomOverlay','#2F80FF')"></div>
+
+<div class="color-dot" style="background:#333"
+onclick="changeColor('roomOverlay','#333333')"></div>
+
 </div>
 
-<div class="card">
-<img src="bathroom.jpg">
-<div class="card-body">
-<h3>Санузел</h3>
-<p>от 4 500 ₽</p>
-</div>
+<a href="tel:+79179773837" class="cta">Позвонить</a>
+
 </div>
 
-<div class="card">
-<img src="hallway.jpg">
-<div class="card-body">
-<h3>Коридор</h3>
-<p>от 4 900 ₽</p>
-</div>
 </div>
 
 </div>
@@ -214,31 +335,139 @@ font-weight:700;
 
 <section class="container">
 
-<h2>Почему выбирают нас</h2>
+<h2>Типовые квартиры Самары</h2>
 
-<div class="features">
+<div class="apartment">
 
-<div class="feature">10+ лет опыта</div>
-<div class="feature">1000+ объектов</div>
-<div class="feature">Монтаж за 2–3 часа</div>
-<div class="feature">Работаем по договору</div>
+<div class="apartment-card" onclick="showPrice('18000')">
+<h3>Хрущёвка</h3>
+<p>≈ 42 м² потолков</p>
+</div>
+
+<div class="apartment-card" onclick="showPrice('22000')">
+<h3>Панельный дом</h3>
+<p>≈ 54 м² потолков</p>
+</div>
+
+<div class="apartment-card" onclick="showPrice('27000')">
+<h3>Новостройка</h3>
+<p>≈ 65 м² потолков</p>
+</div>
 
 </div>
+
+<p id="apartmentPrice" style="text-align:center;font-size:24px;margin-top:20px;"></p>
+
+</section>
+
+
+<section class="container preview">
+
+<h2>Выберите цвет потолка</h2>
+
+<img src="room.jpg">
+
+<div class="preview-controls">
+
+<input type="color" onchange="previewColor(this.value)">
+
+</div>
+
+<div id="previewResult"></div>
+
+</section>
+
+
+<section class="container calc">
+
+<h2>Калькулятор стоимости</h2>
+
+<input type="number" id="area" placeholder="Площадь м²" oninput="calculate()">
+
+<select id="type" onchange="calculate()">
+
+<option value="390">Матовый</option>
+<option value="550">Сатиновый</option>
+<option value="890">Дизайнерский</option>
+
+</select>
+
+<div class="result" id="result">Введите площадь</div>
 
 </section>
 
 
 <footer>
 
-ПОТОЛОК.СЕГОДНЯ<br>
-☎ +7 (917) 977-38-37<br>
-Самара · Новокуйбышевск
+<p>ПОТОЛОК.СЕГОДНЯ</p>
+<p>☎ +7 (917) 977-38-37</p>
+<p>Самара · Новокуйбышевск</p>
 
 </footer>
+
 
 <a href="tel:+79179773837" class="sticky-call">
 📞 Позвонить сейчас
 </a>
+
+
+<script>
+
+function changeColor(id,color){
+
+const overlay=document.getElementById(id);
+
+if(color === '#ffffff'){
+overlay.style.opacity = 0;
+return;
+}
+
+overlay.style.background =
+`linear-gradient(to bottom,
+${color}CC 0%,
+${color}99 40%,
+rgba(0,0,0,0) 100%)`;
+
+overlay.style.opacity = 1;
+
+}
+
+function calculate(){
+
+let area=document.getElementById("area").value;
+let price=document.getElementById("type").value;
+
+if(area>0){
+
+let total=area*price;
+
+if(total<5000) total=5000;
+
+document.getElementById("result").innerHTML="≈ "+total+" ₽";
+
+}else{
+
+document.getElementById("result").innerHTML="Введите площадь";
+
+}
+
+}
+
+function showPrice(price){
+
+document.getElementById("apartmentPrice").innerHTML =
+"Примерная стоимость потолков: "+price+" ₽";
+
+}
+
+function previewColor(color){
+
+document.getElementById("previewResult").innerHTML =
+"Выбранный цвет потолка: "+color;
+
+}
+
+</script>
 
 </body>
 </html>
