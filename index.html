@@ -1,40 +1,24 @@
 <!DOCTYPE html>
 <html lang="ru">
+
 <head>
 
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-<title>Натяжные потолки Самара и Новокуйбышевск — ПОТОЛОК.СЕГОДНЯ</title>
-
-<meta name="description" content="Натяжные потолки в Самаре и Новокуйбышевске. Установка за 2–3 часа. Более 1000 объектов. Монтаж в день обращения.">
-
-<script type="application/ld+json">
-{
- "@context":"https://schema.org",
- "@type":"LocalBusiness",
- "name":"ПОТОЛОК.СЕГОДНЯ",
- "telephone":"+79179773837",
- "areaServed":["Самара","Новокуйбышевск"],
- "priceRange":"390-890"
-}
-</script>
+<title>ПОТОЛОК.СЕГОДНЯ — Натяжные потолки Самара</title>
 
 <style>
 
 body{
 margin:0;
-font-family:Arial,sans-serif;
+font-family:Arial;
 background:#fff;
 color:#111;
 }
 
 header{
 border-bottom:1px solid #eee;
-background:#fff;
-position:sticky;
-top:0;
-z-index:10;
 }
 
 .header-inner{
@@ -69,22 +53,20 @@ border-radius:50%;
 .cta{
 background:#2F80FF;
 color:#fff;
-padding:14px 26px;
-text-decoration:none;
+padding:12px 22px;
 border-radius:8px;
+text-decoration:none;
 font-weight:600;
-display:inline-block;
 }
 
 .hero{
 text-align:center;
-padding:80px 20px;
-background:linear-gradient(#fff,#f5f7fb);
+padding:70px 20px;
+background:linear-gradient(#fff,#f6f8fb);
 }
 
 .hero h1{
-font-size:36px;
-margin-bottom:10px;
+font-size:34px;
 }
 
 .hero strong{
@@ -92,51 +74,10 @@ color:#2F80FF;
 font-size:24px;
 }
 
-.hero-calc{
-margin-top:25px;
-display:flex;
-gap:10px;
-justify-content:center;
-flex-wrap:wrap;
-}
-
-.hero-calc input,
-.hero-calc select{
-padding:12px;
-border:1px solid #ccc;
-border-radius:6px;
-}
-
-.hero-result{
-font-size:26px;
-font-weight:700;
-color:#2F80FF;
-margin-top:10px;
-}
-
 section{
 max-width:1100px;
 margin:auto;
 padding:60px 20px;
-}
-
-.social{
-background:#2F80FF;
-color:#fff;
-text-align:center;
-}
-
-.stats{
-display:flex;
-gap:50px;
-justify-content:center;
-flex-wrap:wrap;
-margin-top:20px;
-}
-
-.stat strong{
-display:block;
-font-size:28px;
 }
 
 .cards{
@@ -148,20 +89,14 @@ gap:24px;
 .card{
 border:1px solid #eee;
 border-radius:10px;
-background:#fff;
 overflow:hidden;
-transition:.25s;
-}
-
-.card:hover{
-transform:translateY(-5px);
-box-shadow:0 15px 40px rgba(0,0,0,.08);
+background:#fff;
 }
 
 .image-wrapper{
-height:260px;
-overflow:hidden;
+height:240px;
 position:relative;
+overflow:hidden;
 }
 
 .image-wrapper img{
@@ -171,20 +106,14 @@ object-fit:cover;
 object-position:top;
 }
 
-.gloss{
+.ceiling-overlay{
 position:absolute;
 top:0;
-left:-100%;
-width:60%;
-height:100%;
-background:linear-gradient(120deg,rgba(255,255,255,0) 0%,rgba(255,255,255,.35) 50%,rgba(255,255,255,0) 100%);
-animation:shine 6s infinite;
-}
-
-@keyframes shine{
-0%{left:-100%}
-50%{left:120%}
-100%{left:120%}
+left:0;
+width:100%;
+height:40%;
+opacity:0;
+transition:.2s;
 }
 
 .card-body{
@@ -194,19 +123,55 @@ padding:20px;
 .price{
 font-weight:700;
 font-size:20px;
-margin:8px 0;
+margin:10px 0;
 }
 
-.features{
-display:grid;
-grid-template-columns:repeat(auto-fit,minmax(220px,1fr));
-gap:20px;
+.color-switch{
+display:flex;
+gap:8px;
+margin:10px 0;
 }
 
-.feature{
-border:1px solid #eee;
-padding:20px;
-border-radius:8px;
+.color-dot{
+width:18px;
+height:18px;
+border-radius:50%;
+cursor:pointer;
+border:2px solid #fff;
+box-shadow:0 0 0 1px #ccc;
+}
+
+.calc{
+background:#f6f8fb;
+padding:30px;
+border-radius:10px;
+text-align:center;
+}
+
+.calc input,
+.calc select{
+padding:10px;
+margin:5px;
+}
+
+.result{
+font-size:22px;
+font-weight:700;
+color:#2F80FF;
+}
+
+.sticky-call{
+position:fixed;
+bottom:20px;
+left:20px;
+right:20px;
+background:#2F80FF;
+color:#fff;
+padding:16px;
+border-radius:10px;
+text-align:center;
+text-decoration:none;
+font-weight:700;
 }
 
 footer{
@@ -217,44 +182,12 @@ padding:30px;
 margin-top:40px;
 }
 
-.sticky-call{
-position:fixed;
-bottom:20px;
-left:20px;
-right:20px;
-background:#2F80FF;
-color:#fff;
-text-align:center;
-padding:16px;
-border-radius:10px;
-font-weight:700;
-text-decoration:none;
-z-index:999;
-}
-
-.float-phone{
-position:fixed;
-top:20px;
-right:20px;
-background:#2F80FF;
-color:#fff;
-padding:10px 16px;
-border-radius:20px;
-display:none;
-text-decoration:none;
-}
-
-.show{
-display:block;
-}
-
 </style>
 
 </head>
 
 
 <body>
-
 
 <header>
 
@@ -263,7 +196,7 @@ display:block;
 <div class="logo">
 <div class="logo-line"></div>
 <div class="logo-dot"></div>
-<span>ПОТОЛОК.СЕГОДНЯ</span>
+ПОТОЛОК.СЕГОДНЯ
 </div>
 
 <a href="tel:+79179773837" class="cta">Позвонить</a>
@@ -275,45 +208,11 @@ display:block;
 
 <section class="hero">
 
-<h1>Натяжные потолки в Самаре</h1>
+<h1>Натяжные потолки Самара</h1>
 
 <p>Монтаж за 2–3 часа</p>
 
 <strong>от 390 ₽ / м²</strong>
-
-<div class="hero-calc">
-
-<input type="number" id="area" placeholder="Площадь м²" oninput="calculate()">
-
-<select id="type" onchange="calculate()">
-<option value="390">Матовый</option>
-<option value="550">Сатиновый</option>
-<option value="890">Дизайнерский</option>
-</select>
-
-</div>
-
-<div class="hero-result" id="result">Введите площадь</div>
-
-<br>
-
-<a href="tel:+79179773837" class="cta">Сделать сегодня</a>
-
-</section>
-
-
-<section class="social">
-
-<h2>98% заказов — в день обращения</h2>
-
-<div class="stats">
-
-<div class="stat"><strong>10+</strong> лет</div>
-<div class="stat"><strong>1000+</strong> объектов</div>
-<div class="stat"><strong>2-3 часа</strong> монтаж</div>
-<div class="stat"><strong>Самара</strong> и Новокуйбышевск</div>
-
-</div>
 
 </section>
 
@@ -324,71 +223,161 @@ display:block;
 
 <div class="cards">
 
+
+<!-- кухня -->
+
 <div class="card">
+
 <div class="image-wrapper">
-<img src="kitchen.jpg" alt="Потолок кухня">
-<div class="gloss"></div>
+<img src="kitchen.jpg">
+<div class="ceiling-overlay" id="kitchenOverlay"></div>
 </div>
+
 <div class="card-body">
+
 <h3>Кухня</h3>
-<div class="price">от 6 900 ₽</div>
-<a href="tel:+79179773837" class="cta">Позвонить</a>
-</div>
+
+<div class="price">6900 ₽</div>
+
+<div class="color-switch">
+
+<div class="color-dot" style="background:#fff"
+onclick="changeColor('kitchenOverlay','#ffffff')"></div>
+
+<div class="color-dot" style="background:#2F80FF"
+onclick="changeColor('kitchenOverlay','#2F80FF')"></div>
+
+<div class="color-dot" style="background:#333"
+onclick="changeColor('kitchenOverlay','#333333')"></div>
+
 </div>
 
-<div class="card">
-<div class="image-wrapper">
-<img src="room.jpg" alt="Потолок комната">
-<div class="gloss"></div>
+<a href="tel:+79179773837" class="cta">Позвонить</a>
+
 </div>
+
+</div>
+
+
+<!-- комната -->
+
+<div class="card">
+
+<div class="image-wrapper">
+<img src="room.jpg">
+<div class="ceiling-overlay" id="roomOverlay"></div>
+</div>
+
 <div class="card-body">
+
 <h3>Комната</h3>
-<div class="price">от 9 900 ₽</div>
-<a href="tel:+79179773837" class="cta">Позвонить</a>
-</div>
+
+<div class="price">9900 ₽</div>
+
+<div class="color-switch">
+
+<div class="color-dot" style="background:#fff"
+onclick="changeColor('roomOverlay','#ffffff')"></div>
+
+<div class="color-dot" style="background:#2F80FF"
+onclick="changeColor('roomOverlay','#2F80FF')"></div>
+
+<div class="color-dot" style="background:#333"
+onclick="changeColor('roomOverlay','#333333')"></div>
+
 </div>
 
-<div class="card">
-<div class="image-wrapper">
-<img src="bathroom.jpg" alt="Потолок ванна">
-<div class="gloss"></div>
+<a href="tel:+79179773837" class="cta">Позвонить</a>
+
 </div>
+
+</div>
+
+
+<!-- ванна -->
+
+<div class="card">
+
+<div class="image-wrapper">
+<img src="bathroom.jpg">
+<div class="ceiling-overlay" id="bathOverlay"></div>
+</div>
+
 <div class="card-body">
+
 <h3>Санузел</h3>
-<div class="price">от 4 500 ₽</div>
-<a href="tel:+79179773837" class="cta">Позвонить</a>
-</div>
+
+<div class="price">4500 ₽</div>
+
+<div class="color-switch">
+
+<div class="color-dot" style="background:#fff"
+onclick="changeColor('bathOverlay','#ffffff')"></div>
+
+<div class="color-dot" style="background:#333"
+onclick="changeColor('bathOverlay','#333333')"></div>
+
 </div>
 
-<div class="card">
-<div class="image-wrapper">
-<img src="hallway.jpg" alt="Потолок коридор">
-<div class="gloss"></div>
-</div>
-<div class="card-body">
-<h3>Коридор</h3>
-<div class="price">от 4 900 ₽</div>
 <a href="tel:+79179773837" class="cta">Позвонить</a>
+
 </div>
+
 </div>
+
+
+<!-- коридор -->
+
+<div class="card">
+
+<div class="image-wrapper">
+<img src="hallway.jpg">
+<div class="ceiling-overlay" id="hallOverlay"></div>
+</div>
+
+<div class="card-body">
+
+<h3>Коридор</h3>
+
+<div class="price">4900 ₽</div>
+
+<div class="color-switch">
+
+<div class="color-dot" style="background:#fff"
+onclick="changeColor('hallOverlay','#ffffff')"></div>
+
+<div class="color-dot" style="background:#2F80FF"
+onclick="changeColor('hallOverlay','#2F80FF')"></div>
+
+</div>
+
+<a href="tel:+79179773837" class="cta">Позвонить</a>
+
+</div>
+
+</div>
+
 
 </div>
 
 </section>
 
 
-<section>
+<section class="calc">
 
-<h2>Почему выбирают нас</h2>
+<h2>Калькулятор стоимости</h2>
 
-<div class="features">
+<input type="number" id="area" placeholder="Площадь м²" oninput="calculate()">
 
-<div class="feature">Монтаж за 2-3 часа</div>
-<div class="feature">Работаем более 10 лет</div>
-<div class="feature">Фиксированная цена</div>
-<div class="feature">Без мусора и пыли</div>
+<select id="type" onchange="calculate()">
 
-</div>
+<option value="390">Матовый</option>
+<option value="550">Сатиновый</option>
+<option value="890">Дизайнерский</option>
+
+</select>
+
+<div class="result" id="result">Введите площадь</div>
 
 </section>
 
@@ -396,18 +385,36 @@ display:block;
 <footer>
 
 <p>ПОТОЛОК.СЕГОДНЯ</p>
-<p>☎ +7 (917) 977-38-37</p>
-<p>Самара · Новокуйбышевск</p>
+<p>+7 (917) 977-38-37</p>
 
 </footer>
 
 
-<a href="tel:+79179773837" class="sticky-call">📞 Позвонить сейчас</a>
-
-<a href="tel:+79179773837" class="float-phone" id="floatPhone">Позвонить</a>
+<a href="tel:+79179773837" class="sticky-call">
+📞 Позвонить сейчас
+</a>
 
 
 <script>
+
+function changeColor(id,color){
+
+const overlay=document.getElementById(id);
+
+if(color === '#ffffff'){
+overlay.style.opacity=0;
+return;
+}
+
+overlay.style.background=
+`linear-gradient(to bottom,
+${color}CC 0%,
+${color}99 40%,
+rgba(0,0,0,0) 100%)`;
+
+overlay.style.opacity=1;
+
+}
 
 function calculate(){
 
@@ -420,7 +427,7 @@ let total=area*price;
 
 if(total<5000) total=5000;
 
-document.getElementById("result").innerHTML="≈ "+total.toLocaleString()+" ₽";
+document.getElementById("result").innerHTML="≈ "+total+" ₽";
 
 }else{
 
@@ -429,18 +436,6 @@ document.getElementById("result").innerHTML="Введите площадь";
 }
 
 }
-
-window.addEventListener("scroll",function(){
-
-let phone=document.getElementById("floatPhone");
-
-if(window.scrollY>300){
-phone.classList.add("show");
-}else{
-phone.classList.remove("show");
-}
-
-});
 
 </script>
 
